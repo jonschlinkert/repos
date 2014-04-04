@@ -4,6 +4,8 @@
 
 Once installed, just run `repos [username]`, and a JSON file with the specified user's GitHub repositories will be saved in the current working directory.
 
+For help, run `repos --help`.
+
 ## Install
 Install globally with [npm](npmjs.org):
 
