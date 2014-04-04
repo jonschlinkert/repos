@@ -1,14 +1,15 @@
 # repos [![NPM version](https://badge.fury.io/js/repos.png)](http://badge.fury.io/js/repos)
 
-> Pull down a list of GitHub repos for the given user or org, and save to a local JSON file.
+> Pull down a list of GitHub repositories for the specified user or org, and save to a local JSON file.
+
+Once installed, just run `repos [username]`, and a JSON file with the specified user's GitHub repositories will be saved in the current working directory.
 
 ## Install
-Install with [npm](npmjs.org):
+Install globally with [npm](npmjs.org):
 
 ```bash
-npm i repos --save-dev
+npm i -g repos
 ```
-
 
 ## Usage
 

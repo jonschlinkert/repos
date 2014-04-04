@@ -2,8 +2,14 @@
 
 > {%= description %}
 
+Once installed, just run `repos [username]`, and a JSON file with the specified user's GitHub repositories will be saved in the current working directory.
+
 ## Install
-{%= include("install") %}
+Install globally with [npm](npmjs.org):
+
+```bash
+npm i -g repos
+```
 
 ## Usage
 
