@@ -1,7 +1,7 @@
 {
   "name": "repos",
-  "description": "Pull down a list of GitHub repos for the given user or org.",
-  "version": "0.1.0",
+  "description": "Pull down a list of GitHub repos for the given user or org, and save to a local JSON file.",
+  "version": "0.1.1",
   "homepage": "https://github.com/jonschlinkert/repos",
   "author": {
     "name": "Jon Schlinkert",

@@ -1,6 +1,6 @@
 # repos [![NPM version](https://badge.fury.io/js/repos.png)](http://badge.fury.io/js/repos)
 
-> Pull down a list of GitHub repos for the given user or org.
+> Pull down a list of GitHub repos for the given user or org, and save to a local JSON file.
 
 ## Install
 Install with [npm](npmjs.org):
