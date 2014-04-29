@@ -40,6 +40,8 @@ var username = argv._[0] || argv.u || argv.user;
 
 // Use `-o` or `--org` to get repos for an org instead of a user.
 var repo = argv.o || argv.org;
+var prop = argv.p || argv.prop || 'name';
+var str = argv.s || argv.str || '.+';
 
 // Use `-d` or `--dest` to specify the destination
 var dest = argv._[1] || argv.d || argv.dest || username + '.json';
@@ -68,11 +70,20 @@ var options = {
   }
 };
 
+var filter = function filter(repos, prop, str) {
+  return _.filter(repos, function(repo) {
+    return new RegExp(str).test(repo[prop]) === true;
+  });
+};
+
 function callback(err, response, body) {
   if (!err && response.statusCode == 200) {
-    var info = JSON.parse(body);
-    file.writeJSONSync(dest, {repos: info});
-    var len = info.length;
+
+    // Filter the results
+    var repos = filter(JSON.parse(body), prop, str);
+    file.writeJSONSync(dest, repos);
+
+    var len = repos.length;
     var d = path.relative(process.cwd(), dest).replace(/\\/g, '/');
     log.writeln(log.gray('  ' + log.runner + ' [saved]'), len, 'repos to', d);
   } else {
