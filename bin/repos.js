@@ -41,6 +41,7 @@ var username = argv._[0] || argv.u || argv.user;
 // Use `-o` or `--org` to get repos for an org instead of a user.
 var repo = argv.o || argv.org;
 var prop = argv.p || argv.prop || 'name';
+var namespace = argv.n || argv.namespace;
 var str = argv.s || argv.str || '.+';
 
 // Use `-d` or `--dest` to specify the destination
@@ -81,7 +82,13 @@ function callback(err, response, body) {
 
     // Filter the results
     var repos = filter(JSON.parse(body), prop, str);
-    file.writeJSONSync(dest, repos);
+    if (namespace) {
+      var obj = {};
+      obj[namespace] = repos;
+      file.writeJSONSync(dest, obj);
+    } else {
+      file.writeJSONSync(dest, repos);
+    }
 
     var len = repos.length;
     var d = path.relative(process.cwd(), dest).replace(/\\/g, '/');
