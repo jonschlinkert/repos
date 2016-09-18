@@ -1,52 +1,73 @@
 {
   "name": "repos",
-  "description": "Pull down a list of GitHub repositories for the specified user or org, and save to a local JSON file.",
+  "description": "Methods for working with the GitHub Repositories API. Node.js/JavaScript",
   "version": "0.1.5",
   "homepage": "https://github.com/jonschlinkert/repos",
-  "author": {
-    "name": "Jon Schlinkert",
-    "url": "http://github.com/https://github.com/jonschlinkert/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/jonschlinkert/repos.git"
-  },
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "jonschlinkert/repos",
   "bugs": {
     "url": "https://github.com/jonschlinkert/repos/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/jonschlinkert/repos/blob/master/LICENSE-MIT"
-    }
+  "license": "MIT",
+  "files": [
+    "bin",
+    "index.js"
   ],
-  "keywords": [
-    "docs",
-    "documentation",
-    "generate",
-    "generator",
-    "markdown",
-    "templates",
-    "verb"
-  ],
-  "bin": {
-    "repos": "./bin/repos.js"
-  },
   "main": "index.js",
+  "bin": {
+    "repos": "bin/repos.js"
+  },
   "engines": {
-    "node": ">=0.8"
+    "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "mocha -R spec"
-  },
-  "devDependencies": {
-    "verb": "~0.2.0"
+    "test": "mocha"
   },
   "dependencies": {
-    "fs-utils": "~0.4.1",
-    "lodash": "~2.4.1",
-    "minimist": "0.0.8",
-    "request": "~2.34.0",
-    "verbalize": "~0.1.2"
+    "btoa": "^1.1.2",
+    "github-base": "^0.5.1"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5"
+  },
+  "keywords": [
+    "all",
+    "allpublic",
+    "api",
+    "commits",
+    "create",
+    "del",
+    "delete",
+    "destroy",
+    "download",
+    "edit",
+    "fork",
+    "forks",
+    "get",
+    "github",
+    "isstarred",
+    "list",
+    "paginate",
+    "paginated",
+    "patch",
+    "post",
+    "put",
+    "repos",
+    "repositories",
+    "repository",
+    "request",
+    "revision",
+    "star",
+    "starred",
+    "unstar"
+  ],
+  "verb": {
+    "related": {
+      "list": [
+        "gists",
+        "github-base",
+        "github-contributors"
+      ]
+    }
   }
 }
