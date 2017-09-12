@@ -35,8 +35,6 @@ Changelog entries are classified using the following labels _(from [keep-a-chang
 
 ## [1.0.0] - 2017-09-12
 
-### Changed
-
 - Complete refactor
 
 ## [0.1.0] - 2014-04-04

@@ -5,9 +5,22 @@ var GitHub = require('github-base');
 var reduce = require('p-reduce');
 
 /**
- * Get the stars for one or more users.
+ * Get repositories for one or more users.
  *
- * @param {String|Array} `users` One or more user or org names.
+ * ```js
+ * var repos = require('{%= name %}');
+ * var options = {
+ *   // see github-base for other authentication options
+ *   token: 'YOUR_GITHUB_AUTH_TOKEN'
+ * };
+ * repos(['doowb', 'jonschlinkert'], options)
+ *   .then(function(repos) {
+ *     // array of repository objects
+ *     console.log(repos);
+ *   })
+ *   .catch(console.error)
+ * ```
+ * @param {String|Array} `users` One or more user or organization names.
  * @param {Object} `options`
  * @return {Promise}
  * @api public

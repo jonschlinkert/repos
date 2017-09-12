@@ -80,6 +80,7 @@
       "list": [
         "gists",
         "github-base",
+        "github-content",
         "github-contributors",
         "topics"
       ]

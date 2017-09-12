@@ -12,18 +12,29 @@ Install with [npm](https://www.npmjs.com/):
 $ npm install --save repos
 ```
 
+## HEADS UP!
+
+v1.0.0 was a complete refactor. Please see the following `usage` section for details.
+
 ## Usage
 
 See [github-base](https://github.com/jonschlinkert/github-base) for more information about available options and authentication choices.
 
+**Params**
+
+* `users` **{String|Array}**: One or more user or organization names.
+* `options` **{Object}**
+* `returns` **{Promise}**
+
+**Example**
+
 ```js
-var repos = require('repos');
-var auth = {
+var repos = require('{%= name %}');
+var options = {
   // see github-base for other authentication options
   token: 'YOUR_GITHUB_AUTH_TOKEN'
 };
-
-repos(['doowb', 'jonschlinkert'], auth)
+repos(['doowb', 'jonschlinkert'], options)
   .then(function(repos) {
     // array of repository objects
     console.log(repos);
@@ -41,6 +52,7 @@ You might also be interested in these projects:
 
 * [gists](https://www.npmjs.com/package/gists): Methods for working with the GitHub Gist API. Node.js/JavaScript | [homepage](https://github.com/jonschlinkert/gists "Methods for working with the GitHub Gist API. Node.js/JavaScript")
 * [github-base](https://www.npmjs.com/package/github-base): JavaScript wrapper that greatly simplifies working with GitHub's API. | [homepage](https://github.com/jonschlinkert/github-base "JavaScript wrapper that greatly simplifies working with GitHub's API.")
+* [github-content](https://www.npmjs.com/package/github-content): Easily download files from github raw user content. | [homepage](https://github.com/doowb/github-content "Easily download files from github raw user content.")
 * [github-contributors](https://www.npmjs.com/package/github-contributors): Generate a markdown or JSON list of contributors for a project using the GitHub API. | [homepage](https://github.com/jonschlinkert/github-contributors "Generate a markdown or JSON list of contributors for a project using the GitHub API.")
 * [topics](https://www.npmjs.com/package/topics): Get and update GitHub repository topics. | [homepage](https://github.com/jonschlinkert/topics "Get and update GitHub repository topics.")
 
