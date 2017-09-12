@@ -7,7 +7,7 @@ var ok = require('log-ok');
 
 repos(argv._[0].split(','), argv)
   .then(function(res) {
-    write(argv._[1], function(err) {
+    write(argv._[1] || 'repos.json', res, function(err) {
       if (err) {
         console.error(err);
         process.exit(1);

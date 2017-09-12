@@ -44,6 +44,15 @@ repos(['doowb', 'jonschlinkert'], options)
 
 See the [GitHub API documentation for repositories](https://developer.github.com/v3/repos/) for more details about the objects returned for each repository.
 
+## CLI
+
+```sh
+$ repos <names> <dest>
+```
+
+* `names` - one or more comma-separated user names or orgs
+* `dest` - destination path to use, default is `repos.json`
+
 ## About
 
 ### Related projects
