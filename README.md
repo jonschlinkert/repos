@@ -29,7 +29,7 @@ See [github-base](https://github.com/jonschlinkert/github-base) for more informa
 **Example**
 
 ```js
-var repos = require('{%= name %}');
+var repos = require('repos');
 var options = {
   // see github-base for other authentication options
   token: 'YOUR_GITHUB_AUTH_TOKEN'
