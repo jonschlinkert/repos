@@ -1,7 +1,7 @@
 {
   "name": "repos",
   "description": "List all repositories for one or more users or orgs.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/jonschlinkert/repos",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": "jonschlinkert/repos",
