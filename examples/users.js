@@ -3,7 +3,7 @@ const auth = require('../test/support/auth');
 const repos = require('../');
 
 repos(['doowb', 'jonschlinkert'], auth)
-  .then(function(res) {
+  .then(res => {
     write.sync('repos.json', JSON.stringify(res, null, 2));
     return res;
   })

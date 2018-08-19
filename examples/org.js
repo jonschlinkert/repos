@@ -1,9 +1,9 @@
-var write = require('write');
-var auth = require('../test/support/auth');
-var repos = require('../');
+const write = require('write');
+const auth = require('../test/support/auth');
+const repos = require('../');
 
 repos('micromatch', auth)
-  .then(function(res) {
+  .then(res => {
     write.sync('micromatch.json', JSON.stringify(res, null, 2));
     return res;
   })

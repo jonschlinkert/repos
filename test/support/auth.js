@@ -1,10 +1,10 @@
 'use strict';
 
-var opts = {alias: {password: 'p', username: 'u'}};
-var argv = require('minimist')(process.argv.slice(2), opts);
-var Store = require('data-store');
-var store = new Store('repos-tests');
-var auth = store.get('auth');
+const opts = {alias: {password: 'p', username: 'u'}};
+const argv = require('minimist')(process.argv.slice(2), opts);
+const Store = require('data-store');
+const store = new Store('repos-tests');
+let auth = store.get('auth');
 
 if (!auth) {
   auth = {};

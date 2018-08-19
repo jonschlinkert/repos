@@ -1,27 +1,27 @@
 'use strict';
 
 require('mocha');
-var assert = require('assert');
-var auth = require('./support/auth.js');
-var repos = require('../');
+const assert = require('assert');
+const auth = require('./support/auth.js');
+const repos = require('../');
 
 describe('repos', function() {
   this.timeout(10000);
 
-  it('should catch error when invalid args are passed', function() {
+  it('should catch error when invalid args are passed', () => {
     return repos().catch(err => assert(err));
   });
 
-  it('should catch error when bad credentials are passed', function() {
+  it('should catch error when bad credentials are passed', () => {
     return repos('micromatch', { token: 'foo' })
-      .catch(function(err) {
+      .catch(err => {
         assert.equal(err.message, 'Bad credentials');
       });
   });
 
-  it('should get repos for the specified org', function() {
+  it('should get repos for the specified org', () => {
     return repos('micromatch', auth)
-      .then(function(res) {
+      .then(res => {
         assert(Array.isArray(res));
         assert(res.some(ele => ele.name === 'to-regex-range'));
         assert(res.some(ele => ele.name === 'nanomatch'));
@@ -29,9 +29,9 @@ describe('repos', function() {
       });
   });
 
-  it('should get repos for an array of usernames', function() {
+  it('should get repos for an array of usernames', () => {
     return repos(['micromatch', 'breakdance'], auth)
-      .then(function(res) {
+      .then(res => {
         assert(Array.isArray(res));
         assert(res.length > 2);
       });

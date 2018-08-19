@@ -1,6 +1,6 @@
 {
   "name": "repos",
-  "description": "List all repositories for one or more users or orgs.",
+  "description": "Tiny wrapper around github-base for getting publicly available information for a repository, or all of the repositories for one or more users or orgs, from the GitHub API.",
   "version": "1.0.2",
   "homepage": "https://github.com/jonschlinkert/repos",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
@@ -24,16 +24,14 @@
     "test": "mocha"
   },
   "dependencies": {
-    "github-base": "^0.5.4",
-    "isobject": "^3.0.1",
-    "log-ok": "^0.1.1",
+    "github-base": "^1.0.0",
     "minimist": "^1.2.0",
-    "p-reduce": "^1.0.0",
-    "write-json": "^2.0.0"
+    "orgs": "^1.0.0",
+    "write": "^1.0.3"
   },
   "devDependencies": {
     "data-store": "^1.0.0",
-    "mocha": "^3.5.0",
+    "mocha": "^3.5.3",
     "gulp-format-md": "^1.0.0"
   },
   "keywords": [
