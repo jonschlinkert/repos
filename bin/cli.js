@@ -1,18 +1,18 @@
 #!/usr/bin/env node
 
-var repos = require('../');
-var argv = require('minimist')(process.argv.slice(2));
-var write = require('write-json');
-var ok = require('log-ok');
+const repos = require('../');
+const argv = require('minimist')(process.argv.slice(2));
+const write = require('write');
 
 repos(argv._[0].split(','), argv)
-  .then(function(res) {
-    write(argv._[1] || 'repos.json', res, function(err) {
+  .then(res => {
+    let filepath = argv._[1] || 'repos.json';
+    write(filepath, JSON.stringify(res, null, 2), err => {
       if (err) {
         console.error(err);
         process.exit(1);
       }
-      ok('done');
+      console.log(`File was written to: ${filepath}`);
       process.exit();
     });
   });

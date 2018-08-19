@@ -1,10 +1,10 @@
-var write = require('write-json');
-var auth = require('../test/support/auth');
-var repos = require('../');
+const write = require('write');
+const auth = require('../test/support/auth');
+const repos = require('../');
 
 repos(['doowb', 'jonschlinkert'], auth)
   .then(function(res) {
-    write.sync('repos.json', res);
+    write.sync('repos.json', JSON.stringify(res, null, 2));
     return res;
   })
   .catch(console.error);
