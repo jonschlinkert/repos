@@ -1,8 +1,8 @@
-# repos [![NPM version](https://img.shields.io/npm/v/repos.svg?style=flat)](https://www.npmjs.com/package/repos) [![NPM monthly downloads](https://img.shields.io/npm/dm/repos.svg?style=flat)](https://npmjs.org/package/repos) [![NPM total downloads](https://img.shields.io/npm/dt/repos.svg?style=flat)](https://npmjs.org/package/repos) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/repos.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/repos)
+# repos [![NPM version](https://img.shields.io/npm/v/repos.svg?style=flat)](https://www.npmjs.com/package/repos) [![NPM monthly downloads](https://img.shields.io/npm/dm/repos.svg?style=flat)](https://npmjs.org/package/repos) [![NPM total downloads](https://img.shields.io/npm/dt/repos.svg?style=flat)](https://npmjs.org/package/repos)
 
-> List all repositories for one or more users or orgs.
+> Tiny wrapper around github-base for getting publicly available information for a repository, or all of the repositories for one or more users or orgs, from the GitHub API.
 
-Follow this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), for updates on this project and others.
+Please consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.
 
 ## Install
 
@@ -12,25 +12,25 @@ Install with [npm](https://www.npmjs.com/):
 $ npm install --save repos
 ```
 
-## HEADS UP!
+## Release history
 
-v1.0.0 was a complete refactor. Please see the following `usage` section for details.
+See the [changelog](./CHANGELOG.md) for updates.
 
 ## Usage
 
-See [github-base](https://github.com/jonschlinkert/github-base) for more information about available options and authentication choices.
+This library is a tiny wrapper around [github-base](https://github.com/jonschlinkert/github-base), see that project's readme for more information about available options and authentication choices.
 
 **Params**
 
-* `users` **{String|Array}**: One or more user or organization names.
-* `options` **{Object}**
+* `users` **{String|Array}**: One or more users or organization names.
+* `options` **{Object}**: See available [options](#options).
 * `returns` **{Promise}**
 
 **Example**
 
 ```js
-var repos = require('repos');
-var options = {
+const repos = require('repos');
+const options = {
   // see github-base for other authentication options
   token: 'YOUR_GITHUB_AUTH_TOKEN'
 };
@@ -44,6 +44,14 @@ repos(['doowb', 'jonschlinkert'], options)
 
 See the [GitHub API documentation for repositories](https://developer.github.com/v3/repos/) for more details about the objects returned for each repository.
 
+## Options
+
+| **Option** | **Type** | **Default** | **Description** | 
+| --- | --- | --- | --- |
+| `filterOrgs` | `function` | undefined | Function for filtering organizations from the result. |
+| `filterRepos` | `function` | undefined | Function for filtering repositories from the result. |
+| `sort` | `boolean` | `true` | By default, the returned list is sorted by repository `name` |
+
 ## CLI
 
 ```sh
@@ -55,21 +63,26 @@ $ repos <names> <dest>
 
 ## About
 
-### Related projects
-
-You might also be interested in these projects:
-
-* [gists](https://www.npmjs.com/package/gists): Methods for working with the GitHub Gist API. Node.js/JavaScript | [homepage](https://github.com/jonschlinkert/gists "Methods for working with the GitHub Gist API. Node.js/JavaScript")
-* [github-base](https://www.npmjs.com/package/github-base): JavaScript wrapper that greatly simplifies working with GitHub's API. | [homepage](https://github.com/jonschlinkert/github-base "JavaScript wrapper that greatly simplifies working with GitHub's API.")
-* [github-content](https://www.npmjs.com/package/github-content): Easily download files from github raw user content. | [homepage](https://github.com/doowb/github-content "Easily download files from github raw user content.")
-* [github-contributors](https://www.npmjs.com/package/github-contributors): Generate a markdown or JSON list of contributors for a project using the GitHub API. | [homepage](https://github.com/jonschlinkert/github-contributors "Generate a markdown or JSON list of contributors for a project using the GitHub API.")
-* [topics](https://www.npmjs.com/package/topics): Get and update GitHub repository topics. | [homepage](https://github.com/jonschlinkert/topics "Get and update GitHub repository topics.")
-
-### Contributing
+<details>
+<summary><strong>Contributing</strong></summary>
 
 Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).
 
-### Building docs
+</details>
+
+<details>
+<summary><strong>Running Tests</strong></summary>
+
+Running and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:
+
+```sh
+$ npm install && npm test
+```
+
+</details>
+
+<details>
+<summary><strong>Building docs</strong></summary>
 
 _(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_
 
@@ -79,26 +92,31 @@ To generate the readme, run the following command:
 $ npm install -g verbose/verb#dev verb-generate-readme && verb
 ```
 
-### Running tests
+</details>
 
-Running and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:
+### Related projects
 
-```sh
-$ npm install && npm test
-```
+You might also be interested in these projects:
+
+* [gists](https://www.npmjs.com/package/gists): Methods for working with the GitHub Gist API. Node.js/JavaScript | [homepage](https://github.com/jonschlinkert/gists "Methods for working with the GitHub Gist API. Node.js/JavaScript")
+* [github-base](https://www.npmjs.com/package/github-base): Low-level methods for working with the GitHub API in node.js/JavaScript. | [homepage](https://github.com/jonschlinkert/github-base "Low-level methods for working with the GitHub API in node.js/JavaScript.")
+* [github-content](https://www.npmjs.com/package/github-content): Easily download files from github raw user content. | [homepage](https://github.com/doowb/github-content "Easily download files from github raw user content.")
+* [github-contributors](https://www.npmjs.com/package/github-contributors): Generate a markdown or JSON list of contributors for a project using the GitHub API. | [homepage](https://github.com/jonschlinkert/github-contributors "Generate a markdown or JSON list of contributors for a project using the GitHub API.")
+* [topics](https://www.npmjs.com/package/topics): Get and update GitHub repository topics. | [homepage](https://github.com/jonschlinkert/topics "Get and update GitHub repository topics.")
 
 ### Author
 
 **Jon Schlinkert**
 
-* [github/jonschlinkert](https://github.com/jonschlinkert)
-* [twitter/jonschlinkert](https://twitter.com/jonschlinkert)
+* [GitHub Profile](https://github.com/jonschlinkert)
+* [Twitter Profile](https://twitter.com/jonschlinkert)
+* [LinkedIn Profile](https://linkedin.com/in/jonschlinkert)
 
 ### License
 
-Copyright © 2017, [Jon Schlinkert](https://github.com/jonschlinkert).
+Copyright © 2018, [Jon Schlinkert](https://github.com/jonschlinkert).
 Released under the [MIT License](LICENSE).
 
 ***
 
-_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on September 12, 2017._
+_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on August 19, 2018._

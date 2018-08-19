@@ -33,6 +33,10 @@ Changelog entries are classified using the following labels _(from [keep-a-chang
 </details>
 
 
+## [2.0.0] - 2018-08-19
+
+- Use the `orgs` library. 
+
 ## [1.0.0] - 2017-09-12
 
 - Complete refactor
@@ -41,5 +45,6 @@ Changelog entries are classified using the following labels _(from [keep-a-chang
 
 - first commit
 
+[2.0.0]: https://github.com/jonschlinkert/repos/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/jonschlinkert/repos/compare/v0.1.0...v1.0.0
 [keep-a-changelog]: https://github.com/olivierlacan/keep-a-changelog
