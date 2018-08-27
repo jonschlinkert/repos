@@ -6,7 +6,10 @@ const write = require('write');
 
 repos(argv._[0].split(','), argv)
   .then(res => {
-    let filepath = argv._[1] || 'repos.json';
+    let filepath = argv._[1];
+    if (!filepath) {
+      return console.log(JSON.stringify(res, null, 2));
+    }
     write(filepath, JSON.stringify(res, null, 2), err => {
       if (err) {
         console.error(err);
