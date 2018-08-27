@@ -55,11 +55,11 @@ See the [GitHub API documentation for repositories](https://developer.github.com
 ## CLI
 
 ```sh
-$ repos <names> <dest>
+$ repos <names> [dest]
 ```
 
 * `names` - one or more comma-separated user names or orgs
-* `dest` - destination path to use, default is `repos.json`
+* `dest` - destination path for JSON file (optional)
 
 ## About
 
