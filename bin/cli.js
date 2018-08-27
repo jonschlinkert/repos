@@ -4,6 +4,10 @@ const repos = require('../');
 const argv = require('minimist')(process.argv.slice(2));
 const write = require('write');
 
+if (!argv.token && !(argv.username && argv.password)) {
+  argv.token = process.env.GITHUB_TOKEN;
+}
+
 repos(argv._[0].split(','), argv)
   .then(res => {
     let filepath = argv._[1];
